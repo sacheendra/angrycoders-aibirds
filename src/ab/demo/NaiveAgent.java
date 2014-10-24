@@ -162,8 +162,8 @@ public class NaiveAgent implements Runnable {
 				Shot shot = new Shot();
 				int dx,dy;
 				{
-					// random pick up a pig
-					ABObject pig = pigs.get(randomGenerator.nextInt(pigs.size()));
+					// picking the highest pig
+					ABObject pig = pigs.get(0);
 					
 					Point _tpt = pig.getCenter();// if the target is very close to before, randomly choose a
 					// point near it
@@ -180,21 +180,12 @@ public class NaiveAgent implements Runnable {
 					ArrayList<Point> pts = tp.estimateLaunchPoint(sling, _tpt);
 					
 					// do a high shot when entering a level to find an accurate velocity
-					if (firstShot && pts.size() > 1) 
+					if (pts.size() > 1) 
 					{
 						releasePoint = pts.get(1);
 					}
 					else if (pts.size() == 1)
 						releasePoint = pts.get(0);
-					else if (pts.size() == 2)
-					{
-						// randomly choose between the trajectories, with a 1 in
-						// 6 chance of choosing the high one
-						if (randomGenerator.nextInt(6) == 0)
-							releasePoint = pts.get(1);
-						else
-							releasePoint = pts.get(0);
-					}
 					else
 						if(pts.isEmpty())
 						{
