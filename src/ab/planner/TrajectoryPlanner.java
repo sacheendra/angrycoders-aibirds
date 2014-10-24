@@ -476,6 +476,16 @@ public class TrajectoryPlanner {
 		return getTimeByDistance(sling, release, tapPoint);
 		
 	}
-    
+    public int getTapTimeB(Rectangle sling, Point release, Point target, int tapInterval)
+    {
+        if (tapInterval == 0)
+            return 0;
+        Point tapPoint = new Point();
+        int distance = target.x - sling.x;
+        double r = ((double)tapInterval/100);
+        tapPoint.setLocation(new Point((int)(distance - 88 + sling.x) , target.y));
+        return getTimeByDistance(sling, release, tapPoint);
+
+    }
   
 }
