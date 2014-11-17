@@ -1,0 +1,20 @@
+﻿Angry Coders Project Summary
+Tushar Santoki - 201201101
+Sacheendra Talluri - 201201091
+Bhavik Patel - 201201196
+The project consists of three methods for tackling the problem of completing a level in Angry Birds. The three methods are used depending on the success factor in the level. 
+
+
+1. Trajectory Expansion: 
+In this method, the trajectories for the different pigs are selected. The thickness of these trajectories is expanded till a fixed amount is reached. The presence of pigs in the trajectories is recorded and the trajectory with maximum score is chosen. This follows from the observation that in most levels, pigs are arranged such that there exists a trajectory which destroys all the pigs. 
+
+
+2. Least Protected Path: 
+This method takes all trajectories to the pigs. It then calculates the protection the pig has using the weighted distance method. Different blocks are assigned different strengths and the strength of all trajectories is calculated till they reach the pig. The trajectory with least strength is taken and used. This follows from the observation that the most vulnerable pig is easy to hit and thus this method assures that we complete the level. 
+
+
+3. Explorer: 
+After observing the performance of the naive agent in the competition, we chose random exploration as a viable strategy to complete levels which are consistently giving low scores or unable to be completed. 
+
+
+We also keep track of levels we are not able to solve and levels where our score is less than the high score. We use this information to replay levels to complete them and also to spend time on levels where we had significantly less score.
