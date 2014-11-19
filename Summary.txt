@@ -2,6 +2,9 @@
 Tushar Santoki - 201201101
 Sacheendra Talluri - 201201091
 Bhavik Patel - 201201196
+
+Score: 9,40,000
+
 The project consists of three methods for tackling the problem of completing a level in Angry Birds. The three methods are used depending on the success factor in the level. 
 
 
